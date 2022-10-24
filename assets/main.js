@@ -24,6 +24,22 @@ let emails = false;
 }
 
 //dadi
-let numUser = Math.round(Math.random () * 6)
-let numPc = Math.round(Math.random () * 6)
+let numUser = document.getElementById('userDice').innerHTML
+let numPc = document.getElementById('pcDice').innerHTML
+let risultato = document.getElementById('result')
+
+numUser = Math.round(Math.random() * 6)
+numPc = Math.round(Math.random() * 6)
 console.log(numUser, numPc)
+
+if (numUser === numPc){
+    result.innerHTML = `PAREGGIO`
+}   else if (numUser > numPc) {
+    result.innerHTML = `HAI VINTO`
+}   else 
+    result.innerHTML = `HAI PERSO`
+
+
+
+
+
