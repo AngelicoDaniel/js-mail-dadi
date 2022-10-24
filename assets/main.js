@@ -24,13 +24,19 @@ let emails = false;
 }
 
 //dadi
-let numUser = document.getElementById('userDice').innerHTML
-let numPc = document.getElementById('pcDice').innerHTML
+let numUser = document.getElementById('userDice')
+let numPc = document.getElementById('pcDice')
 let risultato = document.getElementById('result')
 
 numUser = Math.round(Math.random() * 6)
 numPc = Math.round(Math.random() * 6)
 console.log(numUser, numPc)
+
+document.getElementById('userDice').innerHTML = `${numUser}`
+//numUser.innerHTML = `${numUser}`
+document.getElementById('pcDice').innerHTML = `${numPc}`
+//numPc.innerHTML = `${numPc}`
+
 
 if (numUser === numPc){
     result.innerHTML = `PAREGGIO`
