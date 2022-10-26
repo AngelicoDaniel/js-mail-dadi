@@ -23,30 +23,33 @@ let emails = false;
     }
 }
 
-//dadi
-let numUser = document.getElementById('userDice')
-let numPc = document.getElementById('pcDice')
-let risultato = document.getElementById('result')
+//dice game
 
-numUser = Math.round(Math.random() * 6)
-numPc = Math.round(Math.random() * 6)
-console.log(numUser, numPc)
+let userArray = []
+let cpuArray = []
 
-document.getElementById('userDice').innerHTML = `${numUser}`
-//numUser.innerHTML = `${numUser}`
-document.getElementById('pcDice').innerHTML = `${numPc}`
-//numPc.innerHTML = `${numPc}`
+function diceGame(){
+let user = Math.round( Math.random() * 6 ) + 1;
+let cpu = Math.round( Math.random() * 6 ) + 1;
+
+document.getElementById('userDice').innerText = `user number: ${user}`
+document.getElementById('cpuDice').innerText = `cpu number: ${cpu}`
 
 
-if (numUser === numPc){
-    result.innerHTML = `PAREGGIO`
-}   else if (numUser > numPc) {
-    result.innerHTML = `HAI VINTO`
-}   else 
-    result.innerHTML = `HAI PERSO`
+let result = document.getElementById('result')
 
+if ( user > cpu ) {
+    result.innerText = `user won`
+    userArray.push('win')
+}   else if ( cpu > user) {
+    result.innerText = `cpu won`
+    cpuArray.push('win')
+}   else {
+    result.innerText = `draw`
+}
 
-
-
+document.getElementById('userVictory').innerText = `${userArray.length}`
+document.getElementById('cpuVictory').innerText = `${cpuArray.length}`
+}
 
 
